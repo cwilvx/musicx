@@ -8,12 +8,12 @@ CORS(app)
 @app.route("/")
 def get_folders():
     folders = os.listdir("/home/cwilvx/Music")
-    return {'all folders': folders}
+    return {'all_folders': folders}
 
 @app.route("/<folder>")
 def get_files(folder):
     files = os.listdir("/home/cwilvx/Music/" + folder)
-    return {'all files': files}
+    return {'all_files': files}
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True)
