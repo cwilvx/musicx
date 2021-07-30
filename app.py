@@ -1,18 +1,24 @@
+import os
+
 from flask import Flask
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
 def get_folders():
-    folders = os.listdir("/home/cwilvx/Music")
-    return {'all_folders': folders}
+    home = "/home/cwilvx/Music"
+    folders = os.listdir(home)
+    return {
+        'home_folder': home,
+        'all_folders': folders
+        }
 
 @app.route("/<folder>")
 def get_files(folder):
     files = os.listdir("/home/cwilvx/Music/" + folder)
+    print(files)
     return {'all_files': files}
 
 if __name__ == "__main__":

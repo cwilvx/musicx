@@ -25,7 +25,6 @@ function printFolders(){
             let container = getContainer('folders');
             let folderNode = createNode('div');
             folderNode.setAttribute('id', 'folder');
-            // folderNode.setAttribute('onclick', 'updateFiles()');
 
             folderNode.innerHTML = folder;
             console.log(folder);
@@ -46,7 +45,6 @@ function getFiles(folder){
     });
 }
 
-// getFiles("Nadina");
 
 function printFiles(folder){
     getFiles(folder)
@@ -57,26 +55,20 @@ function printFiles(folder){
             fileNode.setAttribute('id', 'file');
 
             fileNode.innerHTML = file;
-            console.log(file);
 
             appendNode(container, fileNode);
         });
     })
 }
 
-// printFiles();
-
-function sayHi(){
-    console.log('hi');
-}
-
 function updateFiles(){
     let container = getContainer('folders');
     let files = getContainer('files');
-    container.addEventListener('click', function(e){
-        if (e.target.id === 'folder') {
-            let folder = e.target.innerHTML;
-            console.log(folder);
+
+    container.addEventListener('click', function(event){
+        if (event.target.id === 'folder') {
+            let folder = event.target.innerHTML;
+
             files.textContent = '';
             printFiles(folder);
         }
@@ -84,4 +76,43 @@ function updateFiles(){
 
 }
 
-updateFiles()
+updateFiles();
+
+function loadAudio(file){
+    
+    let folders = getContainer('folders');
+    let files = getContainer('files');
+
+    function getFolderName(){
+        folders.addEventListener('click', function(event){
+            if (event.target.id === 'folder') {
+                return event.target.innerHTML;
+            };
+        });
+    };
+
+    function getFileName(){
+        files.addEventListener('click', function(event){
+            if (event.target.id === 'file') {
+                return event.target.innerHTML;
+            };
+        });
+    };
+    
+    function getHomeFolder(){
+        return fetch('http://localhost:8080/')
+        .then(response => response.json())
+        .then(json => {
+            return json.home_folder;
+        });
+    };
+    
+    let home_folder = getHomeFolder();
+    let folder_name = getFolderName();
+    let file_name = getFileName();
+
+    return home_folder + '/' + folder_name + '/' + file_name;
+};
+
+let audio = loadAudio();
+console.log(audio);
