@@ -79,39 +79,50 @@ function updateFiles(){
 updateFiles();
 
 function loadAudio(file){
-    
+    let home_folder;
+    let folder_name;
+    let file_name;
+
     let folders = getContainer('folders');
     let files = getContainer('files');
 
-    function getFolderName(){
+    const getFolderName = async() => {
         folders.addEventListener('click', function(event){
             if (event.target.id === 'folder') {
-                return event.target.innerHTML;
+                folder_name = event.target.innerHTML;
+
+                const file_name = await getFileName();
+                getHomeFolder();
+
+                console.log(home_folder + '/' + folder_name + '/' + file_name);
             };
         });
     };
 
     function getFileName(){
         files.addEventListener('click', function(event){
+
             if (event.target.id === 'file') {
                 return event.target.innerHTML;
             };
         });
+
     };
     
     function getHomeFolder(){
         return fetch('http://localhost:8080/')
-        .then(response => response.json())
-        .then(json => {
-            return json.home_folder;
-        });
-    };
-    
-    let home_folder = getHomeFolder();
-    let folder_name = getFolderName();
-    let file_name = getFileName();
+            .then(response => response.json())
+            .then(json => {
+                home_folder = json.home_folder;
+                console.log(home_folder);
+            }
+            // _callback();
+            );
 
-    return home_folder + '/' + folder_name + '/' + file_name;
+        
+    };
+
+    return getFolderName();
 };
 
 let audio = loadAudio();
