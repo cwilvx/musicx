@@ -1,5 +1,5 @@
 // constants
-let home_uri = 
+// let home_uri =
 
 function getFolders() {
   return fetch('http://localhost:8080/')
@@ -39,13 +39,10 @@ function printFolders(){
 
 printFolders()
 
-function getFiles(folder){
-    return fetch('http://localhost:8080/' + folder)
-    .then(response => response.json())
-    .then(json => {
-        // console.log(json);
-        return json.all_files;
-    });
+async function getFiles(folder){
+    const response = await fetch('http://localhost:8080/' + folder);
+    const json = await response.json();
+    return json.all_files;
 }
 
 
@@ -89,10 +86,13 @@ function listenToFile(){
         if (event.target.id === "file"){
             selected_file = event.target.innerHTML;
 
-            console.log(selected_folder);
-            console.log(selected_file);
+            // console.log(selected_folder);
+            // console.log(selected_file);
             console.log(home_folder)
-            let audio_uri = 'file://'+home_folder + "/" + selected_folder + "/" + selected_file;
+            let audio_uri = home_folder + "/" + selected_folder + "/" + selected_file;
+            let audio = new Audio(audio_uri)
+            audio.play()
+            console.log(audio_uri)
           
         }
     })
@@ -110,7 +110,7 @@ function getHomeFolder(){
     return fetch('http://localhost:8080/')
     .then(response => response.json())
     .then(json => {
-        return json.home_folder
+        return json.server_port
     });
 }
 

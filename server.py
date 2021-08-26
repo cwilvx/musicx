@@ -13,7 +13,12 @@ def handler_from(directory):
                 (http.server.SimpleHTTPRequestHandler,),
                 {'__init__': _init, 'directory': directory})
 
+
 with socketserver.TCPServer(("", PORT), handler_from(music_dir)) as httpd:
-    httpd.allow_reuse_address = True
+    socketserver.TCPServer.allow_reuse_address = True
     # print("serving at http://localhost:"+str(PORT))
-    httpd.serve_forever()
+    try:
+        httpd.serve_forever()
+    except(KeyboardInterrupt):
+        httpd.shutdown()
+        httpd.server_close()
