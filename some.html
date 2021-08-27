@@ -1,5 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/bottom-bar.css">
+    <script src="https://kit.fontawesome.com/5c733969bc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="card"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, itaque quibusdam quos officiis cum nobis ipsum sed rem facilis modi corporis quo dolorem amet perspiciatis, consectetur illo doloribus atque tempore.</p></div>
+        <div id="card1"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, itaque quibusdam quos officiis cum nobis ipsum sed rem facilis modi corporis quo dolorem amet perspiciatis, consectetur illo doloribus atque tempore.</p></div>
+        
+        <!-- <div id="bottom-bar">
+            <div id="details">
+                <h3>Hank Williams</h3>
+                <p>Lonesome blues</p>
+            </div>
+            <div id="controls">
+                <i id="previous" class="fas fa-step-backward"></i>
+                <i class="fas fa-play"></i>
+                <i id="next" class="fas fa-step-forward"></i>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+<style>
+    #card {
+        width: 100%;
+        height: 1000px;
+        background-color: black;
+    }
+
+    #wrapper {
+        float: left;
+    }
+
+    #card1 {
+        position: relative;
+        color: red;
+        bottom: 0;
+    }
+</style>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +166,51 @@
     <title>Document</title>
 </head>
 <body>
-    <audio controls autoplay muted>
-        <source src="http://0.0.0.0:8000/Music/100%25%20UB40/UB40%20-%20C'est%20La%20Vie.mp3">
-      Your browser does not support the audio element.
-      </audio>
+    <!-- <script src="./howler.js/dist/howler.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+
+<script>
+// var Player = function(playlist){
+//     this.playlist = playlist;
+//     this.index = 0;
+
+//     track.innerHTML = '1. ' + playlist[0].title;
+
+//     playlist.forEach(function(track){
+//       var div = document.createElement('div');
+//       div.innerHTML = track.title;
+//       div.className = 'track';
+//       div.onclick = function(){
+//         player.skipTo(playlist.indexOf(track));
+//       };
+//       list.appendChild(div);
+//     });
+// };
+
+// Player.prototype = {
+//     play: function(index){
+//       var self = this;
+//       var sound;
+
+//       index = typeof index === 'number' ? index : self.index;
+//       var data = self.playlist[index];
+
+//       if (data.howl){
+//         sound = data.howl;
+//       } else {
+//         sound = data.howl = new Howl({
+//           src: ['http://localhost:8009/100%25%20Drake/01.%20Bad%20Bunny%2C%20Drake%20-%20MIA%20%28feat.%20Drake%29.flac', 'http://localhost:8009/100%25%20Drake/05.%20Drake%20-%20Toosie%20Slide.flac'],
+//           html5: true,
+//           onplay: function(){
+//             duration.innerHTML = self.formatTime(Math.round(sound.duration()));
+//           }
+//         });
+
+//         sound.play();
+//       }
+//     }
+// }
+</script>
 </body>
-</html>
+
+</html> -->

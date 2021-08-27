@@ -5,63 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/bottom-bar.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://kit.fontawesome.com/5c733969bc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <audio id="now_playing" src=""></audio>
     <p id="json"></p>
-    <div id="container">
-        <div id="folders" class="shadowed">
-            <h1>All folders</h1>
+    <div id="wrapper">
+        <div id="container">
+            <div id="folders" class="shadowed">
+                <h1>All folders</h1>
+            </div>
+            <div id="files" class="shadowed">
+                <h1>All files</h1>
+            </div>
         </div>
-        <div id="files" class="shadowed">
-            <h1>All files</h1>
+
+        <div id="bottom-bar">
+            <div id="details">
+                <h3>Hank Williams</h3>
+                <p>Lonesome blues</p>
+            </div>
+            <div id="controls">
+                <i id="previous" class="fas fa-step-backward"></i>
+                <i class="fas fa-play"></i>
+                <i id="next" class="fas fa-step-forward"></i>
+            </div>
         </div>
     </div>
-    <!-- <audio controls autoplay>
-        <source src="" type="audio/flac">
-    </audio>
-    <audio controls autoplay>
-        <source src="file:///home/cwilvx/Music/Soundtrack%20to%2020/David%20Gates%20-%20He%20Don't%20Know%20How%20to%20Love%20You.flac" type="audio/flac">
-      Your browser does not support the audio element.
-      </audio> -->
+
+    
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 
 </html>
-
-<style>
-    #container{
-        position: absolute;
-        display: flex;
-        width: fit-content;
-    }
-
-    .shadowed{
-        width: 400px;
-        height: 100%;
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px rgb(122, 122, 122);
-        margin: 10px;
-        text-align: center;
-    }
-
-    .shadowed > div {
-        background-color: rgb(0, 20, 77);
-        border-radius: 10px;
-        height: 50px;
-        width: auto;
-        margin: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: aliceblue;
-    }
-    /* audio {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-    } */
-</style>

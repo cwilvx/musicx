@@ -88,12 +88,25 @@ function listenToFile(){
 
             // console.log(selected_folder);
             // console.log(selected_file);
-            console.log(home_folder)
-            let audio_uri = home_folder + "/" + selected_folder + "/" + selected_file;
-            let audio = new Audio(audio_uri)
-            audio.play()
-            console.log(audio_uri)
-          
+            console.log(server_port)
+            audio_uri = '';
+            // audio.pause();
+            if (audio === undefined){
+                audio_uri = server_port + "/" + selected_folder + "/" + selected_file;
+                audio = new Audio(audio_uri);
+                audio.volume = 1.0;
+                audio.
+                audio.play();
+            } else {
+                audio.pause();
+                audio.src = server_port + "/" + selected_folder + "/" + selected_file;
+                audio.play();
+            }
+            
+            // audio = new Audio(audio_uri)
+
+            // audio.play()
+            // console.log(audio_uri)
         }
     })
 }
@@ -102,9 +115,9 @@ listenToFile()
 
 let selected_folder;
 let selected_file;
-let home_folder;
-
-// console.log(selected_file);
+let server_port;
+let audio_uri;
+let audio;
 
 function getHomeFolder(){
     return fetch('http://localhost:8080/')
@@ -115,8 +128,8 @@ function getHomeFolder(){
 }
 
 getHomeFolder().then(
-    home => {
-        home_folder = home;
+    port => {
+        server_port = port;
         // console.log(home_folder);
     }
 );
