@@ -1,13 +1,26 @@
-/* #wrapper {
-    
-} */
-
-#container{
-    position: absolute;
-    display: flex;
-    margin-bottom: 170px !important;
+body {
+    background-color: #1F1F1F;
+    @font-face {
+        font-family: 'Google product sans';
+        src: url('fonts/ProductSans-Regular.woff') format('woff');
+    }
 }
 
+#container #scrollable {
+    display: flex;
+    margin-left: 200px;
+}
+@media screen and (max-width: 650px) {
+    #container #scrollable {
+         margin-bottom: 175px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    #container #scrollable {
+        margin-bottom: 85px;
+    }
+}
 .shadowed{
     width: 400px;
     height: 100%;

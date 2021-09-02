@@ -1,0 +1,118 @@
+#sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(17, 17, 17);
+    overflow: hidden;
+    padding-top: 20px;
+}
+#sidebar-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    height: 70%;
+    overflow-y: hidden;
+}
+
+#sidebar-header {
+    padding: 20px;
+    color: #fff;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.sidebar-library-header {
+    /* padding: 0px; */
+    color: rgb(170, 170, 170);
+    font-size: small;
+    text-align: left;
+    margin-left: 5px;
+}
+.button a{
+    /* background-color: rgb(255, 94, 94); */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.button a i {
+    margin-right: 10px;
+}
+#home-button {
+    position: absolute;
+    top: 140px;
+    width: 100%;
+}
+#now-playing-album-art {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 110px;
+    background-image: url('../album.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 0 !important;
+}
+
+#browse-button {
+    position: absolute;
+    top: 170px;
+    width: 100%;
+
+}
+#folder-items {
+    position: absolute;
+    top: 250px;
+    /* bottom: 130px; */
+    text-align: center;
+    width: 90%;
+    height: 400px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    /* background-color: rgba(78, 78, 78, 0.274); */
+    border-radius: 10px;
+    padding-top: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#folders-button {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+.folder-item {
+    text-align: left;
+    margin: 10px;
+    border-radius: 10px;
+    color: #fff;
+    display: block !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+}
+.folder-item a {
+    color: #fff;
+    text-decoration: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}

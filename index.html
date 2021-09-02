@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Musicx</title>
     <link rel="stylesheet" href="./styles/bottom-bar.css">
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="https://kit.fontawesome.com/5c733969bc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/sidebar.css">
 </head>
 
 <body>
@@ -16,28 +17,102 @@
     <p id="json"></p>
     <div id="wrapper">
         <div id="container">
-            <div id="folders" class="shadowed">
-                <h1>All folders</h1>
+            <div id="scrollable">
+                <div id="folders" class="shadowed">
+                    <h1>All folders</h1>
+                </div>
+                <div id="files" class="shadowed">
+                    <h1>All files</h1>
+                </div>
             </div>
-            <div id="files" class="shadowed">
-                <h1>All files</h1>
+
+        </div>
+        <div id="sidebar">
+            <div id="sidebar-header">
+                <h3>cwilvx music</h3>
+            </div>
+            <div id="sidebar-body">
+                <div id="home-button" class="button">
+                    <a href="#">
+                        <i class="material-icons material-icons-round">music_note</i>
+                        Browse
+                    </a>
+                </div>
+                <div id="browse-button" class="button">
+                    <a href="#">
+                        <i class="material-icons material-icons-round">library_music</i>
+                        Library
+                    </a>
+                </div>
+                <div id="folder-items" class="list-item">
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                    <span class="folder-item"> <a href="">lil peep</a> </span>
+                </div>
+                <div id="folders-button" class="button">
+                    <a href="#">
+                        <i class="material-icons material-icons-round">folder</i>
+                        Folders
+                    </a>
+                </div>
+                
+                <div id="now-playing-album-art"></div>
             </div>
         </div>
-
         <div id="bottom-bar">
-            <div id="details">
-                <h3>Hank Williams</h3>
-                <p>Lonesome blues</p>
-            </div>
-            <div id="controls">
-                <i id="previous" class="fas fa-step-backward"></i>
-                <i class="fas fa-play"></i>
-                <i id="next" class="fas fa-step-forward"></i>
+            <div id="bottom">
+                <div id="bottom-upper">
+                    <div class="clickable" id="album-art"></div>
+                    <p id="now-playing-title">lil kennedy</p>
+                    <p id="now-playing-artist">Lil Peep</p>
+                    <div class="clickable" id="now-playing">
+                    </div>
+                    <div id="music-control">
+                        <span id="skip-previous" class="clickable material-icons material-icons-round">
+                            skip_previous
+                        </span>
+                        <span id="play-pause" class="clickable material-icons material-icons-round">
+                            play_arrow
+                        </span>
+                        <span id="skip-next" class="clickable material-icons material-icons-round">
+                            skip_next
+                        </span>
+                    </div>
+                    <div id="volume">
+                        <span class="material-icons material-icons-round">
+                            volume_up
+                        </span>
+                        <span class="material-icons material-icons-round">
+                            queue_music
+                        </span>
+                    </div>
+                </div>
+                <div class="clickable" id="progress">
+                </div>
+                <div id="lower">
+                    <div class="clickable" id="bottom-left">
+                        <p class="">
+                            <span id="home-icon" class="material-icons material-icons-round">
+                                chair
+                            </span>
+                            Home
+                        </p>
+                    </div>
+                    <div class="clickable" id="bottom-right">
+                        <span id="library-icon" class="material-icons material-icons-round">
+                            library_music
+                        </span>
+                        Library
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
+
     <script src="./script.js"></script>
 </body>
 
